@@ -1,0 +1,94 @@
+#! /Applications/Nuke6.0v1-32/Nuke6.0v1.app/Contents/MacOS/Nuke6.0v1 -nx
+version 6.0 v1
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1280" h="774" screen="0">
+        <splitter orientation="2">
+            <split size="373"></split>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"></page>
+            </dock>
+            <split size="375"></split>
+            <splitter orientation="1">
+                <split size="638"></split>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"></page>
+                    <page id="Curve Editor.1"></page>
+                </dock>
+                <split size="638"></split>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"></page>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /Volumes/TITAN3/PROYECTOS/NUKEmaLL/tester1.nk
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+}
+Camera2 {
+ inputs 0
+ translate {0 0 4.802000046}
+ name Camera1
+ xpos -191
+ ypos 52
+}
+cloudPhong {
+ inputs 0
+ name cloudPhong3
+ selected true
+ xpos -20
+ ypos -146
+}
+cloudLight1 {
+ inputs 0
+ translate {0.3899999857 0 -2.380000114}
+ name cloudLight1_1
+ xpos 150
+ ypos -167
+}
+ApplyMaterial {
+ inputs 2
+ display textured
+ render_mode textured
+ name ApplyMaterial1
+ xpos 69
+ ypos -47
+}
+Light2 {
+ inputs 0
+ translate {-0.6600000262 0.9100000262 0}
+ name Light1
+ xpos -83
+ ypos -74
+}
+Scene {
+ inputs 2
+ name Scene1
+ xpos 69
+ ypos 9
+}
+push 0
+ScanlineRender {
+ inputs 3
+ name ScanlineRender1
+ xpos -61
+ ypos 92
+}
+Viewer {
+ input_process false
+ name Viewer1
+ xpos 164
+ ypos 69
+}
+Light2 {
+ inputs 0
+ name Light2
+ xpos 153
+ ypos 51
+}

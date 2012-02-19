@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>QuickTime Pro: Exportar para web - cloudlight2</title>
+	<script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
+	<script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
+	<link href="http://www.apple.com/library/quicktime/stylesheets/qtp_library.css" rel="StyleSheet" type="text/css" />
+</head>
+<body>
+
+<table>
+	<tr>
+		<td><img src="http://images.apple.com/downloads/images/essentials_quicktime20070611.png" /></td>
+		<td><h1>Instrucciones para publicar <i>cloudlight2</i> en su sitio web</h1></td>
+	</tr>
+</table>
+
+<div id="summary">
+	<p>Si ha exportado <i>cloudlight2</i> mediante QuickTime Pro, la siguiente información le ayudará a publicar esta película en su sitio web.</p>
+	<p>En la misma carpeta en la que se encuentra este archivo HTML de instrucciones, QuickTime Pro ha guardado varias versiones de su película optimizadas para su distribución web. Asimismo, en esta carpeta se halla una película de referencia, que selecciona la mejor versión para los distintos dispositivos de los usuarios y las diferentes velocidades de conexión. Con la inclusión de esta película de referencia en su página HTML, se asegurará de ofrecer siempre una experiencia audiovisual de calidad en su sitio web.</p>
+	<p>A continuación se muestra un ejemplo (se requiere acceso a Internet):</p>
+</div>
+
+<script type="text/javascript"><!--
+	QT_WritePoster_XHTML('Haga clic para reproducir', 'cloudlight2-poster.jpg',
+		'cloudlight2.mov',
+		'757', '496', '',
+		'controller', 'true',
+		'autoplay', 'true',
+		'bgcolor', 'black',
+		'scale', 'aspect');
+//-->
+</script>
+<noscript>
+<object width="757" height="496" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+	<param name="src" value="cloudlight2-poster.jpg" />
+	<param name="href" value="cloudlight2.mov" />
+	<param name="target" value="myself" />
+	<param name="controller" value="false" />
+	<param name="autoplay" value="false" />
+	<param name="scale" value="aspect" />
+	<embed width="757" height="496" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"
+		src="cloudlight2-poster.jpg"
+		href="cloudlight2.mov"
+		target="myself"
+		controller="false"
+		autoplay="false"
+		scale="aspect">
+	</embed>
+</object>
+</noscript>
+
+<div id="textembed">
+	<p>Utilice el siguiente código HTML para incluir su película en su página web.</p>
+	<h3>Notas importantes:</h3>
+	<ul>
+		<li>Para que sus contenidos sean visibles en Internet, todos los componentes multimedia (películas, imagen póster) deben estar guardados en un servidor de acceso público.</li>
+		<li>Los parámetros de URL deberán modificarse si sus componentes multimedia no provienen de su página web sino de otra ubicación.</li>
+		<li>Los parámetros de URL de la película deberán apuntar siempre a la película de referencia (<a href="cloudlight2.mov">cloudlight2.mov</a>) en lugar de a la película original.</li>
+		<li>La película de referencia debe permanecer siempre en la misma carpeta que las películas originales.</li>
+		<li>Aunque el nombre de las películas originales no puede modificarse, sí puede cambiar el nombre de la película de referencia (no olvide cambiarlo también en el código HTML).</li>
+		<li>Para obtener un XHTML válido, la etiqueta <code>&lt;style&gt;</code> y la primera etiqueta <code>&lt;script&gt;</code> deben colocarse en el interior de la etiqueta <code>&lt;head&gt;</code> de la página.</li>
+	</ul>
+	</p>
+
+<p>Utilice este código en la etiqueta <code>&lt;head&gt;</code> de su página web:</p>
+<textarea rows="5" cols="80">
+&lt;script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"&gt;&lt;/script&gt;
+&lt;link href="http://www.apple.com/library/quicktime/stylesheets/qtp_library.css" rel="StyleSheet" type="text/css" /&gt;
+</textarea>
+
+<p>Utilice este código en la etiqueta <code>&lt;body&gt;</code> de su página web:</p>
+<textarea rows="40" cols="80">
+&lt;script type=&quot;text/javascript&quot;&gt;&lt;!--
+	QT_WritePoster_XHTML('Click to Play', 'cloudlight2-poster.jpg',
+		'cloudlight2.mov',
+		'757', '496', '',
+		'controller', 'true',
+		'autoplay', 'true',
+		'bgcolor', 'black',
+		'scale', 'aspect');
+//--&gt;
+&lt;/script&gt;
+&lt;noscript&gt;
+&lt;object width=&quot;757&quot; height=&quot;496&quot; classid=&quot;clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B&quot; codebase=&quot;http://www.apple.com/qtactivex/qtplugin.cab&quot;&gt;
+	&lt;param name=&quot;src&quot; value=&quot;cloudlight2-poster.jpg&quot; /&gt;
+	&lt;param name=&quot;href&quot; value=&quot;cloudlight2.mov&quot; /&gt;
+	&lt;param name=&quot;target&quot; value=&quot;myself&quot; /&gt;
+	&lt;param name=&quot;controller&quot; value=&quot;false&quot; /&gt;
+	&lt;param name=&quot;autoplay&quot; value=&quot;false&quot; /&gt;
+	&lt;param name=&quot;scale&quot; value=&quot;aspect&quot; /&gt;
+	&lt;embed width=&quot;757&quot; height=&quot;496&quot; type=&quot;video/quicktime&quot; pluginspage=&quot;http://www.apple.com/quicktime/download/&quot;
+		src=&quot;cloudlight2-poster.jpg&quot;
+		href=&quot;cloudlight2.mov&quot;
+		target=&quot;myself&quot;
+		controller=&quot;false&quot;
+		autoplay=&quot;false&quot;
+		scale=&quot;aspect&quot;&gt;
+	&lt;/embed&gt;
+&lt;/object&gt;
+&lt;/noscript&gt;
+</textarea>
+</div>
+
+<div id="exportlog">
+<h3>Elementos exportados:</h3>
+<ul>
+	<li>Película de referencia:
+		<ul><li><a href="cloudlight2.mov">cloudlight2.mov</a></li></ul>
+	</li>
+	<li>Fotograma póster:
+		<ul><li><a href="cloudlight2-poster.jpg">cloudlight2-poster.jpg</a></li></ul>
+	</li>
+	<li>Versiones:
+		<ul>
+		<li><a href="cloudlight2-iPhone.m4v">cloudlight2-iPhone.m4v</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+</body>
+</html>

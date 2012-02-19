@@ -1,0 +1,208 @@
+#! /Applications/Nuke6.0v6-32/Nuke6.0v6.app/Contents/MacOS/Nuke6.0v6 -nx
+version 6.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1280" h="774" screen="0">
+        <splitter orientation="2">
+            <split size="413"></split>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"></page>
+            </dock>
+            <split size="335"></split>
+            <splitter orientation="1">
+                <split size="638"></split>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"></page>
+                    <page id="Curve Editor.1"></page>
+                </dock>
+                <split size="638"></split>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"></page>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /Volumes/TITAN3/PROYECTOS/NUKEmaLL/run.nk
+ frame 37
+ format "512 512 0 0 512 512 1 square_512"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+}
+Camera2 {
+ inputs 0
+ translate {0 0 177}
+ focal 20
+ name Camera1
+ xpos 972
+ ypos -464
+}
+Light2 {
+ inputs 0
+ intensity 1.5
+ translate {59.5 36 201}
+ name Light1
+ xpos 612
+ ypos -555
+}
+cloudPhong {
+ inputs 0
+ emission 0.1
+ name cloudPhong1
+ xpos 946
+ ypos -647
+}
+Read {
+ inputs 0
+ file /Volumes/TITAN3/PROYECTOS/NUKEmaLL/teapots_position.exr
+ format "512 512 0 0 512 512 1 square_512"
+ name Read1
+ xpos 1026
+ ypos -800
+}
+Read {
+ inputs 0
+ file /Volumes/TITAN3/PROYECTOS/NUKEmaLL/teapots_color.exr
+ format "512 512 0 0 512 512 1 square_512"
+ name Read2
+ xpos 559
+ ypos -800
+}
+cloudLight1 {
+ inputs 2
+ display solid
+ resolution 0.5
+ radius 0.2
+ rotate {-48 23.7 11}
+ uniform_scale 2
+ name cloudLight1_1
+ xpos 752
+ ypos -771
+}
+ApplyMaterial {
+ inputs 2
+ display solid
+ render_mode textured
+ name ApplyMaterial1
+ xpos 752
+ ypos -647
+}
+Scene {
+ inputs 2
+ name Scene1
+ xpos 772
+ ypos -555
+}
+push 0
+ScanlineRender {
+ inputs 3
+ name ScanlineRender1
+ xpos 762
+ ypos -443
+}
+Camera2 {
+ inputs 0
+ translate {-27 9 4037}
+ focal 100
+ name Camera2
+ xpos 1719
+ ypos -440
+}
+Light2 {
+ inputs 0
+ intensity 2
+ translate {-660 660 950}
+ name Light2
+ xpos 1310
+ ypos -548
+}
+cloudPhong {
+ inputs 0
+ diffuse 4
+ specular 1.18
+ max_shininess 9.6
+ surfaceShader 1.38
+ name cloudPhong2
+ xpos 1644
+ ypos -647
+}
+Read {
+ inputs 0
+ file /Volumes/TITAN3/PROYECTOS/NUKEmaLL/xCode/release/cloudlightOSXN606/Kate-Beckinsale-Cute-Face-Shot-1-1920x1200.jpg
+ format "1920 1200 0 0 1920 1200 1 "
+ name Read5
+ xpos 1441
+ ypos -1218
+}
+Transform {
+ scale 1.58
+ center {960 600}
+ name Transform1
+ xpos 1441
+ ypos -1113
+}
+Reformat {
+ name Reformat1
+ xpos 1441
+ ypos -1051
+}
+set N1787a2b0 [stack 0]
+Premult {
+ name Premult2
+ xpos 1606
+ ypos -778
+}
+push $N1787a2b0
+Premult {
+ name Premult1
+ xpos 1441
+ ypos -891
+}
+cloudLight1 {
+ inputs 2
+ display solid
+ resolution 0.5
+ radius 2
+ useLuma true
+ depth 2
+ translate {-550 -491 0}
+ scaling {1 1 0.5}
+ uniform_scale 2
+ name cloudLight1_2
+ xpos 1455
+ ypos -778
+}
+ApplyMaterial {
+ inputs 2
+ display solid
+ render_mode textured
+ name ApplyMaterial2
+ xpos 1455
+ ypos -626
+}
+Scene {
+ inputs 2
+ name Scene2
+ xpos 1479
+ ypos -526
+}
+push 0
+ScanlineRender {
+ inputs 3
+ name ScanlineRender2
+ xpos 1469
+ ypos -320
+}
+set N2bb1f50 [stack 0]
+push $N2bb1f50
+Viewer {
+ inputs 2
+ input_number 1
+ input_process false
+ name Viewer1
+ xpos 762
+ ypos -375
+}

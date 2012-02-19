@@ -1,0 +1,250 @@
+#! /Applications/Nuke6.0v6-32/Nuke6.0v6.app/Contents/MacOS/Nuke6.0v6 -nx
+version 6.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1280" h="774" screen="0">
+        <splitter orientation="2">
+            <split size="413"></split>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"></page>
+            </dock>
+            <split size="335"></split>
+            <splitter orientation="1">
+                <split size="638"></split>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"></page>
+                    <page id="Curve Editor.1"></page>
+                </dock>
+                <split size="638"></split>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"></page>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /Volumes/TITAN3/PROYECTOS/NUKEmaLL/run.nk
+ format "512 512 0 0 512 512 1 square_512"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ label "                      I needed to fix this because the point pass \n                      comes with some silly rotation, in cloudLight\n                      and then scaled the Z depth in here."
+ xpos 69
+ ypos -463
+ bdwidth 306
+ bdheight 121
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ label "                      I needed to fix this because the point pass \n                      comes with some silly rotation, in cloudLight\n                      and then scaled the Z depth in here."
+ xpos 762
+ ypos -445
+ bdwidth 306
+ bdheight 121
+}
+Read {
+ inputs 0
+ file /Volumes/TITAN3/PROYECTOS/NUKEmaLL/teapots_color.exr
+ format "512 512 0 0 512 512 1 square_512"
+ name Read4
+ xpos -179
+ ypos -564
+}
+set N1ec0590 [stack 0]
+Camera2 {
+ inputs 0
+ translate {252 262 996}
+ name Camera1
+ xpos 242
+ ypos -61
+}
+cloudPhong {
+ inputs 0
+ color3 4
+ diffuse 4
+ name cloudPhong1
+ xpos 255
+ ypos -293
+}
+Read {
+ inputs 0
+ file /Volumes/TITAN3/PROYECTOS/NUKEmaLL/teapots_position.exr
+ format "512 512 0 0 512 512 1 square_512"
+ name Read3
+ xpos 235
+ ypos -564
+}
+push $N1ec0590
+cloudLight1 {
+ inputs 2
+ display solid
+ render_mode solid
+ resolution 0.265
+ radius 2.99
+ deep 1
+ useBottom true
+ rotate {-6.7 0 0}
+ pivot {0 1 1}
+ name cloudLight1_1
+ xpos 83
+ ypos -535
+}
+TransformGeo {
+ scaling {1 1 6}
+ name TransformGeo1
+ xpos 73
+ ypos -404
+}
+ApplyMaterial {
+ inputs 2
+ render_mode solid
+ name ApplyMaterial1
+ xpos 73
+ ypos -293
+}
+Light2 {
+ inputs 0
+ translate {570 238 297}
+ name Light1
+ xpos 345
+ ypos -233
+}
+Scene {
+ inputs 2
+ display solid
+ render_mode textured
+ name Scene1
+ xpos 83
+ ypos -207
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant1
+ xpos -153
+ ypos -64
+}
+ScanlineRender {
+ inputs 3
+ name ScanlineRender1
+ xpos 73
+ ypos -40
+}
+Viewer {
+ inputs 2
+ zoom_lock true
+ input_process false
+ name Viewer1
+ xpos 53
+ ypos 74
+}
+Camera2 {
+ inputs 0
+ translate {252 262 996}
+ name Camera2
+ xpos 935
+ ypos -43
+}
+cloudPhong {
+ inputs 0
+ color3 4
+ diffuse 4
+ name cloudPhong2
+ xpos 948
+ ypos -275
+}
+Read {
+ inputs 0
+ file /Volumes/TITAN3/PROYECTOS/NUKEmaLL/teapots_position.exr
+ format "512 512 0 0 512 512 1 square_512"
+ name Read1
+ xpos 928
+ ypos -546
+}
+Constant {
+ inputs 0
+ color {0.9800000191 0.9800000191 0.9800000191 1}
+ name Constant4
+ xpos 656
+ ypos -648
+}
+Read {
+ inputs 0
+ file /Volumes/TITAN3/PROYECTOS/NUKEmaLL/teapots_color.exr
+ format "512 512 0 0 512 512 1 square_512"
+ name Read2
+ xpos 546
+ ypos -546
+}
+ShuffleCopy {
+ inputs 2
+ red red
+ green green
+ blue blue
+ alpha alpha2
+ name ShuffleCopy2
+ xpos 656
+ ypos -517
+}
+cloudLight1 {
+ inputs 2
+ display solid
+ render_mode solid
+ resolution 0.265
+ radius 2.99
+ deep 1
+ useBottom true
+ rotate {-6.7 0 0}
+ pivot {0 1 1}
+ name cloudLight1_2
+ xpos 776
+ ypos -517
+}
+TransformGeo {
+ scaling {1 1 6}
+ name TransformGeo2
+ xpos 766
+ ypos -386
+}
+ApplyMaterial {
+ inputs 2
+ render_mode solid
+ name ApplyMaterial2
+ xpos 766
+ ypos -275
+}
+Light2 {
+ inputs 0
+ translate {570 238 297}
+ name Light2
+ xpos 1038
+ ypos -215
+}
+Scene {
+ inputs 2
+ display solid
+ render_mode textured
+ name Scene2
+ xpos 776
+ ypos -189
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant3
+ xpos 540
+ ypos -46
+}
+ScanlineRender {
+ inputs 3
+ name ScanlineRender2
+ xpos 766
+ ypos -22
+}
